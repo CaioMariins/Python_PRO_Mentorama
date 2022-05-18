@@ -1,0 +1,21 @@
+Resources:
+  servidor1:
+    Properties:
+      ImageId: ami-00399ec92321828f5
+      InstanceType: t2.micro
+      Monitoring: true
+      PropagateTagsToVolumeOnCreation: false
+      Tenancy: dedicated
+    Type: AWS::EC2::Instance
+  servidor2:
+    Properties:
+      ImageId: ami-00399ec92321828f5
+      InstanceType: t2.micro
+    Type: AWS::EC2::Instance
+  servidor3:
+    Properties:
+      ImageId: ami-00399ec92321828f5
+      InstanceType: t2.micro
+      PropagateTagsToVolumeOnCreation: true
+      Tenancy: host
+    Type: AWS::EC2::Instance
