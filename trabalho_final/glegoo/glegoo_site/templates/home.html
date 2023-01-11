@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = "pt-BR">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "initial-scale = 1, width = device-width">
+        <link href = "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel = "stylesheet">
+        <link rel="stylesheet" href="{% static 'glegoo.css' %}">
+        <title> Glegoo</title>
+   </head>
+   <body>
+    <div id="image">
+        <img src="{% static 'glegoo.png' %}">
+    </div>
+    <div id="search-container">
+      <form action= "{% url 'home' %}" method="POST">
+        <input type="text" name = 'url' id='url' placeholder="Insira um link">
+        <button type="submit">Pesquisar</button>
+        {% csrf_token %}
+      </form>
+    </div>
+    <div>
+      {%for link in lista_final %}
+      <li>{{link}}</li>
+      <br>
+      {% endfor %}
+    </div>
+    </body>
+</html>
